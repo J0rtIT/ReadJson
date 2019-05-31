@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
+
 
 namespace ReadJson
 {
@@ -10,6 +9,13 @@ namespace ReadJson
     {
         static void Main(string[] args)
         {
+            var json = File.ReadAllText(@"C:\Users\jorte\source\repos\ReadJson\ReadJson\Config.json");
+            var rootObject = JsonConvert.DeserializeObject<Configuration>(json);
+
+
+
+            Console.WriteLine(json);
+            Console.ReadKey();
         }
     }
 }
